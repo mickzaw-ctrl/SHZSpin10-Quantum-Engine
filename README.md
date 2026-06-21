@@ -43,11 +43,11 @@ This project is licensed under the **GNU AGPLv3**.
 Large-scale industrial deployment, integration into proprietary SaaS platforms, or use within closed-source commercial environments requires a separate **Commercial License**. 
 
 For inquiries regarding commercial partnerships or licensing terms, please contact:
-**Michał Ślusarczyk** mickzaw@gmail.com)
+**Michał Ślusarczyk** (mickzaw@gmail.com)
 
 ## 🤝 Collaboration
 Looking for strategic partners at NVIDIA, Google Quantum AI, and CERN for exascale validation.
 
 ---
 **Author**: Michał Ślusarczyk  
-**Entity**: SHZ Quantum Technologies z o.o.
+**Entity**: SHZ Quantum Technologies
