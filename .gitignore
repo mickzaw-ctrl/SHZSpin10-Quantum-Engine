@@ -1,0 +1,10 @@
+__pycache__/
+*.so
+*.o
+*.json
+*.png
+.DS_Store
+venv/
+.env
+universe_state_*.json
+hpc_benchmark_results.json
