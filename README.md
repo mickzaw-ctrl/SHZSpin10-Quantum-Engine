@@ -50,4 +50,4 @@ Looking for strategic partners at NVIDIA, Google Quantum AI, and CERN for exasca
 
 ---
 **Author**: Michał Ślusarczyk  
-**Entity**: SHZ Quantum Technologies / United Physical Intelligence (UPI)
+**Entity**: SHZ Quantum Technologies z o.o.
