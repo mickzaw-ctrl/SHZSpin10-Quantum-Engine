@@ -32,6 +32,20 @@ The v14.4-OPTIMIZED kernel features a hybrid architecture:
    ```bash
    python3 spin10_benchmark_hpc.py
    ```
+4. **Run Dark Sector Module** (phenomenological, see disclaimer below):
+   ```bash
+   python3 spin10_dark_sector.py
+   ```
+
+## 🌑 Dark Matter & Dark Energy Module
+`spin10_dark_sector.py` provides an **illustrative, explicitly calibrated** phenomenological
+model that maps the Spin(10) relational graph's degree hierarchy onto the visible/dark-matter/
+dark-energy budget, and an illustrative CPL toy-model (`w(a) = w0 + wa(1-a)`) referencing the
+DESI DR2 (2025) hints of dynamical dark energy. **This module does not claim to solve the dark
+matter / dark energy problem** — both remain open problems in physics. See
+[`docs/dark_sector.md`](./docs/dark_sector.md) for the full scientific context, observational
+evidence (Planck 2018, DESI DR1/DR2), the cosmological constant problem, and an honest
+assessment of what this repository's model does and does not achieve.
 
 ## 📜 Scientific Whitepaper
 The full theoretical background, proofs, and derivation formulas can be found in the [Technical Whitepaper](./docs/whitepaper.md).

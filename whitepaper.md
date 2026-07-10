@@ -27,3 +27,20 @@ The v14.4 kernel is optimized for high-performance localized and distributed com
 
 ## 4. Quantum Computing Integration
 The engine provides a topological bridge for **Surface Code** error correction, utilizing the Atiyah-Singer index to protect logical qubits on heavy-hex architectures like IBM Eagle.
+
+## 5. Dark Sector: Dark Matter & Dark Energy (Phenomenological Module)
+Unlike Sections 2.1–2.2, this section is explicitly **not** a first-principles derivation.
+Dark matter and dark energy remain open problems in physics: no experiment has yet detected a
+dark matter particle, and the ~50–120 orders of magnitude mismatch between the quantum vacuum
+energy density and the observed cosmological constant (the "cosmological constant problem")
+remains unsolved by any known theory, including this one.
+
+`spin10_dark_sector.py` provides an **illustrative, calibrated** analogy: it partitions the
+Spin(10) relational graph's nodes by connectivity degree and compares the resulting mass
+fractions to the observational budget from Planck 2018 ($\Omega_b \approx 0.049$,
+$\Omega_c \approx 0.265$, $\Omega_\Lambda \approx 0.685$), and implements a CPL-style toy model
+$w(a) = w_0 + w_a(1-a)$ referencing the dynamical dark energy hints reported by DESI DR2 (2025),
+where combined analyses favor $w_0 > -1$, $w_a < 0$ with a possible phantom crossing. The module
+reports the deviation between its graph-derived fractions and the Planck targets explicitly,
+rather than presenting a false precision match. Full context and caveats are documented in
+[`docs/dark_sector.md`](./docs/dark_sector.md).
