@@ -4,8 +4,9 @@
 #include <numeric>
 
 extern "C" {
-    // Zoptymalizowane jądro relaksacji z wektoryzacją pętli
+    // Deterministic phase sum; n_sweeps only scales a_out, not loop count.
     int relax_spin10_links_fast(int n_links, int n_sweeps, double beta, double* w_out, double* a_out) {
+        if (n_links <= 0 || n_sweeps < 0 || !w_out || !a_out) return 1;
         double w_sum = 0.0;
         double a_sum = 0.0;
         const double inv_n = 1.0 / n_links;

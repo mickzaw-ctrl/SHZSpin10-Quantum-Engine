@@ -1,53 +1,57 @@
-# SHZSpin10 v14.4-OPTIMIZED: The Physics Apex Engine
+# SHZSpin10 — eksperymentalny silnik grafowy
 
-![Status](https://img.shields.io/badge/Status-Operational-brightgreen)
-![Physics](https://img.shields.io/badge/ToE-Spin(10)--E8-blue)
-![Backend](https://img.shields.io/badge/Backend-Mojo%20%2F%20C%2B%2B-orange)
+Repozytorium zawiera prototypowe narzędzia numeryczne i kontrolne inspirowane
+modelem grafowym Spin(10). **Nie stanowi obecnie potwierdzonej teorii
+wszystkiego** ani dowodu emergencji czasoprzestrzeni, trzech generacji lub
+stałych fizycznych. Bieżący kod jest narzędziem eksploracyjnym; jego wyniki i
+założenia należy rozróżniać od danych eksperymentalnych.
 
-## 🌌 Overview
-**SHZSpin10** is a high-performance numerical engine for a Unified Theory of Everything. It implements a relational graphity model where spacetime and matter emerge from the collective dynamics of Spin(10) holonomies.
+## Audyt i dokumentacja
 
-### Key Breakthroughs:
-*   **Numerical Derivation of $\alpha$**: Derives the fine-structure constant (1/137.036) from topological invariants.
-*   **Big Bounce Resolution**: Replaces the Big Bang singularity with a quantum transition at $\rho_{crit} \approx 0.41 \rho_P$.
-*   **HPC Performance**: 191+ Giga-OPS kernel optimized for NVIDIA Blackwell architectures.
-*   **Quantum Bridge**: Direct mapping of ToE graphs to IBM Eagle (127-qubit) processors.
+- [Audyt, pochodzenie liczb i status REMEDIA](docs/AUDYT-I-STATUS.md)
+- [Dwa zamrożone benchmarki i porównanie z analizami eksperymentów](docs/PREDYKCJE-I-DANE.md)
+- [Odtwarzalny przykład operatora Diraca na grafie](docs/OPERATOR-DIRACA.md)
+- [Zakres i ograniczenia implementacji](whitepaper.md)
 
-## 🚀 Performance
-The v14.4-OPTIMIZED kernel features a hybrid architecture:
-- **Mojo (Modular MAX)**: MLIR-level hardware abstraction.
-- **C++ (OpenMP)**: Massively parallelized link relaxation.
-- **Python**: High-level orchestration and SciML digital twins.
+Poprzednio analizowane dokumenty `REMEDIA`, manifesty i `FIXES.md` znajdują się
+w **innym** repozytorium, [spin10-toe](https://github.com/mickzaw-ctrl/spin10-toe).
+Lokalny audyt odsyła do jego konkretnego commitu. Nie zmodyfikowano tam oryginałów.
 
-## 🛠 Installation & Usage
-1. **Compile the HPC Kernel**:
-   ```bash
-   g++ -Ofast -march=native -shared -fPIC -fopenmp -o libspin10_fast.so spin10_core_fast.cpp
-   ```
-2. **Run Simulation**:
-   ```bash
-   python3 spin10_optimized.py
-   ```
-3. **Run Benchmarks**:
-   ```bash
-   python3 spin10_benchmark_hpc.py
-   ```
+## Instalacja i uruchomienie
 
-## 📜 Scientific Whitepaper
-The full theoretical background, proofs, and derivation formulas can be found in the [Technical Whitepaper](./docs/whitepaper.md).
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
+pip install -r requirements.txt
+python scientific_checks.py
+python graph_dirac.py
+python -m unittest discover -s tests -v
+```
 
-## ⚖️ Licensing
-This project is licensed under the **GNU AGPLv3**. 
+Opcjonalny kod C++:
 
-**Note for Commercial Users:** 
-Large-scale industrial deployment, integration into proprietary SaaS platforms, or use within closed-source commercial environments requires a separate **Commercial License**. 
+```sh
+g++ -O2 -shared -fPIC -fopenmp -o libspin10_fast.so spin10_core_fast.cpp
+python spin10_optimized.py
+python spin10_benchmark_hpc.py
+```
 
-For inquiries regarding commercial partnerships or licensing terms, please contact:
-**Michał Ślusarczyk** (mickzaw@gmail.com)
+Biblioteka C++ liczy deterministyczną sumę faz: **nie** aktualizuje ogniw
+Spin(10), nie wykonuje 100 przemiatanych iteracji ani nie jest obliczeniem
+Wilson loop. Benchmark mierzy liczbę odwiedzonych elementów na sekundę, nie
+GigaFLOPS/GigaOPS. Brak biblioteki jest jawnie raportowany jako brak, nie jako
+zerowy pomiar. Diagnostyka silnika zwraca `Performance` i `Diagnostics`, nie
+poprzednie niezweryfikowane pola `Physics`.
 
-## 🤝 Collaboration
-Looking for strategic partners at NVIDIA, Google Quantum AI, and CERN for exascale validation.
+## Ograniczenia
 
----
-**Author**: Michał Ślusarczyk  
-**Entity**: SHZ Quantum Technologies
+RGE jest ilustracyjnym jednopętlowym przepływem SM/MSSM z założonym równym
+sprzężeniem na skali GUT. Użyty graf Barabási–Albert ma parametr m=4, co nie
+oznacza średniego stopnia 4. Nachylenie błądzenia losowego w stałym oknie nie
+jest potwierdzonym wymiarem spektralnym IR. Operator w `graph_dirac.py` ma
+indeks grafowej charakterystyki Eulera i nie jest chiralnym operatorem 4D
+Spin(10). Niepewności fizyczne nie zostały wyznaczone.
+
+## Licencja
+
+Treść licencji i dodatkowych warunków znajduje się w [LICENSE](LICENSE).
