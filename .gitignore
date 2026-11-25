@@ -8,3 +8,4 @@ venv/
 .env
 universe_state_*.json
 hpc_benchmark_results.json
+.venv/
